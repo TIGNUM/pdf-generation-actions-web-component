@@ -3,11 +3,18 @@
     <head>
         <title></title>
         <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
-        <link rel="stylesheet" href="https://d2gjspw5enfim.cloudfront.net/web-portal/pdf-generation/newLayout.css">
+        <style>
+            actions-report.style-area::part(background) {
+                text-align: center;
+                color: #3d6fb4;
+                text-decoration: underline;
+                background-color: #3d6fb4;
+            }
+        </style>
         <script type="module" src="./actionsReport.js"></script>
     </head>
     <body>
-        <actions-report html-report=""></actions-report>
+        <actions-report class="style-area" html-report="<p>Test</p>"></actions-report>
     </body>
 </html>
 

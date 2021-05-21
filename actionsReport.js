@@ -2,8 +2,9 @@ const template = document.createElement('template');
 template.innerHTML = `
     <div>
         <slot>
-             <div id="buttons-section" data-html2canvas-ignore="true">
-                <button id="getPDF" onclick="getPDF()">Download PDF</button>
+            <link rel="stylesheet" href="https://d2gjspw5enfim.cloudfront.net/web-portal/pdf-generation/newLayout.css">
+             <div part="background" id="buttons-section" data-html2canvas-ignore="true">
+                <button  class="get-pdf">Download PDF</button>
                 <button id="printPdf" type="button" onclick="window.print()">Print</button>
             </div>
             <div id="element-to-print">
@@ -36,14 +37,21 @@ export class ActionsReport extends HTMLElement {
         if (oldVal !== newVal) {
             console.log(`${name} changed from ${oldVal} to ${newVal}`)
         }
-    }
-
-    getPDF(idDomSectionToPrint = 'element-to-print', nameForPdf = 'generatedFile.pdf') {
-        const element = document.getElementById(idDomSectionToPrint);
-        html2pdf().from(element).save(nameForPdf);
+        listenForPdfGenerationCall(this);
     }
 
 }
+
+function listenForPdfGenerationCall (elem) {
+    const shadow = elem.shadowRoot;
+    shadow.querySelector('#element-to-print').innerHTML = '<br><br>String HTML for the Pdf to be rendered';
+    const getPdfElement = shadow.querySelector('.get-pdf');
+    getPdfElement.onclick = () => {
+        const element = shadow.getElementById('element-to-print');
+        html2pdf().from(element).save('generatedFile');
+    };
+}
+
 
 window.customElements.define('actions-report', ActionsReport);
 
