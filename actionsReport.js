@@ -26,7 +26,19 @@ export class ActionsReport extends HTMLElement {
     }
 
     connectedCallback() {
-        console.log('ActionsReport added to DOM');
+        console.log('ActionsReport added to DOM', this.htmlReport);
+        if (!this.htmlReport) {
+            this.htmlReport = '';
+        }
+    }
+
+    get htmlReport() {
+        // attributes always string
+        return this.getAttribute('html-report');
+    }
+
+    set htmlReport(value) {
+        this.setAttribute('html-report', value);
     }
 
     adoptedCallback() {
@@ -35,16 +47,17 @@ export class ActionsReport extends HTMLElement {
 
     attributeChangedCallback(name, oldVal, newVal) {
         if (oldVal !== newVal) {
-            console.log(`${name} changed from ${oldVal} to ${newVal}`)
+            console.log(`${name} changed from ${oldVal} to ${newVal}`);
+            this.htmlReport = newVal;
         }
-        listenForPdfGenerationCall(this);
+        listenForPdfGenerationCall(this, this.htmlReport);
     }
 
 }
 
-function listenForPdfGenerationCall (elem) {
+function listenForPdfGenerationCall (elem, htmlReportString) {
     const shadow = elem.shadowRoot;
-    shadow.querySelector('#element-to-print').innerHTML = '<br><br>String HTML for the Pdf to be rendered';
+    shadow.querySelector('#element-to-print').innerHTML = htmlReportString;
     const getPdfElement = shadow.querySelector('.get-pdf');
     getPdfElement.onclick = () => {
         const element = shadow.getElementById('element-to-print');
