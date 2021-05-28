@@ -14,7 +14,7 @@ template.innerHTML = `
     </div>
 `;
 
-export class ActionsReport extends HTMLElement {
+export class Index extends HTMLElement {
     constructor() {
         super();
         const shadowRoot = this.attachShadow({mode: 'open'});
@@ -66,5 +66,5 @@ function listenForPdfGenerationCall (elem, htmlReportString) {
 }
 
 
-window.customElements.define('actions-report', ActionsReport);
+window.customElements.define('actions-report', Index);
 
