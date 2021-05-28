@@ -1,0 +1,55 @@
+{
+  "name": "pdf-generation-actions-web-component",
+  "version": "1.0.0",
+  "description": "components actions to print or render the report to a pdf",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TIGNUM/pdf-generation-actions-web-component.git"
+  },
+  "author": "tignum",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TIGNUM/pdf-generation-actions-web-component/issues"
+  },
+  "homepage": "https://github.com/TIGNUM/pdf-generation-actions-web-component#readme",
+  "dependencies": {
+    "@semantic-release/release-notes-generator": "^9.0.2"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "CHANGELOG.md"
+        }
+      ],
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": false
+        }
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "CHANGELOG.md",
+            "package.json",
+            "package-lock.json"
+          ],
+          "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ],
+      "@semantic-release/github"
+    ],
+    "branches": [
+      "main"
+    ]
+  }
+}
