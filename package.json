@@ -7,10 +7,7 @@
     "build": "webpack --config webpack.config.js",
     "release": "semantic-release"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TIGNUM/pdf-generation-actions-web-component.git"
-  },
+  "repository": "https://github.com/TIGNUM/pdf-generation-actions-web-component.git",
   "author": "tignum",
   "license": "ISC",
   "bugs": {
@@ -55,5 +52,8 @@
     "branches": [
       "main"
     ]
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }
