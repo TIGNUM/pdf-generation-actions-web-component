@@ -25,13 +25,14 @@ jobs:
       - run: npm install
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - run: npm run build
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Release
         run: npm run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build Web Component
+        run: npm run build
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       # Remove npmrc so we use native auth via GITHUB_TOKEN
       - run: rm .npmrc | true
       - uses: JS-DevTools/npm-publish@v1
