@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.0.0...v1.0.1) (2021-05-28)
+
+
+### Bug Fixes
+
+* .npmrc ([d6b30e6](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/d6b30e63fc626554c3f0058d42be5530b0e99275))
+
 # 1.0.0 (2021-05-28)
 
 
