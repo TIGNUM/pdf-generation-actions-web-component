@@ -2,7 +2,6 @@ const template = document.createElement('template');
 template.innerHTML = `
     <div>
         <slot>
-            <link rel="stylesheet" href="https://d2gjspw5enfim.cloudfront.net/web-portal/pdf-generation/newLayout.css">
              <div part="background" id="buttons-section" data-html2canvas-ignore="true">
                 <button  class="get-pdf">Download PDF</button>
                 <button id="printPdf" type="button" onclick="window.print()">Print</button>
@@ -26,7 +25,6 @@ export class Index extends HTMLElement {
     }
 
     connectedCallback() {
-        console.log('ActionsReport added to DOM', this.htmlReport);
         if (!this.htmlReport) {
             this.htmlReport = '';
         }
@@ -41,13 +39,8 @@ export class Index extends HTMLElement {
         this.setAttribute('html-report', value);
     }
 
-    adoptedCallback() {
-        console.log('ActionsReport was moved into a new DOM');
-    }
-
     attributeChangedCallback(name, oldVal, newVal) {
         if (oldVal !== newVal) {
-            console.log(`${name} changed from ${oldVal} to ${newVal}`);
             this.htmlReport = newVal;
         }
         listenForPdfGenerationCall(this, this.htmlReport);
@@ -65,6 +58,4 @@ function listenForPdfGenerationCall (elem, htmlReportString) {
     };
 }
 
-
 window.customElements.define('actions-report', Index);
-

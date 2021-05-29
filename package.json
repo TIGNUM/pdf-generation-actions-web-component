@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "release": "semantic-release"
+    "release": "semantic-release",
+    "test:web": "http-server -p 8082"
   },
   "repository": "https://github.com/TIGNUM/pdf-generation-actions-web-component.git",
   "author": "tignum",
@@ -20,6 +21,7 @@
     "@semantic-release/github": "^7.2.3",
     "@semantic-release/npm": "^7.1.3",
     "@semantic-release/release-notes-generator": "^9.0.2",
+    "http-server": "^0.12.3",
     "semantic-release": "^17.4.3"
   },
   "release": {

@@ -7,7 +7,7 @@ Print or pdf generation buttons for generating Tignum reports
  <actions-report class="style-area" html-report="<p>Test</p>"></actions-report>
 ```
 
-## Apply styles to the shadow dom
+## Apply styles to the web component
 ```css
 
     actions-report.style-area::part(background) {
@@ -21,6 +21,12 @@ Print or pdf generation buttons for generating Tignum reports
 
 ## Build
 
-```npm
-$> npm run build
+```
+npm run build
 ``
+
+## Test on browser
+
+```
+npm run test:web
+```
