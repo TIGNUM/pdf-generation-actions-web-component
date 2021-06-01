@@ -1,0 +1,32 @@
+name: PRCheck
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14
+          registry-url: https://npm.pkg.github.com/
+          scope: '@tignum'
+      - run: rm .npmrc | true
+      - run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.NPM_PAT_PRIVATE_PACKAGES_TOKEN }}" > .npmrc
+      - run: npm install
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: Lint
+        run: npm run lint
+      - name: Build Web Component
+        run: npm run build
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
