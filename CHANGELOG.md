@@ -1,3 +1,12 @@
+# [1.1.0](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.0.3...v1.1.0) (2021-06-02)
+
+
+### Features
+
+* release to npm ([ce37d61](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/ce37d61627a153776b57b59b9c23aab12f8bee20))
+* release to npm ([588bde1](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/588bde1ab16a25fedc313b12042e6867f95e6c7b))
+* release to npm ([28e43e0](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/28e43e01c24ad1bc4b178e27950f2110025942ad))
+
 ## [1.0.3](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.0.2...v1.0.3) (2021-05-29)
 
 
