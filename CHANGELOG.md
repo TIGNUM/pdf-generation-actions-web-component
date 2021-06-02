@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.5.0...v1.6.0) (2021-06-02)
+
+
+### Features
+
+* incorrect organization ([e2fe935](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/e2fe93569c45c59ef26c5ca64c5d4e72699851b0))
+
 # [1.5.0](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.4.0...v1.5.0) (2021-06-02)
 
 

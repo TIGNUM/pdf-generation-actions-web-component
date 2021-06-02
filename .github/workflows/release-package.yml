@@ -37,24 +37,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # Remove npmrc so we use native auth via GITHUB_TOKEN
       - run: rm .npmrc | true
-      - uses: JS-DevTools/npm-publish@v1
-        with:
-          registry: "https://npm.pkg.github.com/"
-          token: ${{ secrets.GITHUB_TOKEN }}
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-      - name: Slack Notification
-        uses: rtCamp/action-slack-notify@v2
-        env:
-          RELEASE_VERSION: ${{ github.event.inputs.version }}
-          SLACK_CHANNEL: tignum_web
-          SLACK_COLOR: ${{ job.status }} # or a specific color like 'green' or '#ff00ff'
-          SLACK_ICON: https://github.com/quintessence/slack-icons/blob/master/images/octocat-spock-slack-icon.png
-          SLACK_MESSAGE: "New version deployed :rocket: Actions Web Component ${{ github.event.inputs.version }} new version available!"
-          SLACK_TITLE: ${{ github.event.inputs.version }} Actions Pdf Web Component
-          SLACK_USERNAME: GitHubActions
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
   publish-npm:
     needs: build
     runs-on: ubuntu-latest
