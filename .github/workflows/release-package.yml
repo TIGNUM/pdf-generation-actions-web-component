@@ -16,7 +16,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Install packages
-        run: npm run install
+        run: npm install
       - name: Lint
         run: npm run lint
       - name: Build Web Component
