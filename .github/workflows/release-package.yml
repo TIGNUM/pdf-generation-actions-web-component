@@ -43,7 +43,22 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      publish-npm:
+        needs: build
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v2
+          - uses: actions/setup-node@v2
+            with:
+              node-version: 12
+              registry-url: https://registry.npmjs.org/
+              scope: tignum_eng
+          - run: npm ci
+          - run: npm install
+          - run: npm install && npm publish --@tignum_eng:registry=https://registry.npmjs.org/
+            env:
+              NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
         env:
