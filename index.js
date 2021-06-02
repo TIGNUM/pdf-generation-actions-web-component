@@ -9,8 +9,8 @@ template.innerHTML = `
                 <button id="printPdf" type="button" onclick="window.print()">Print</button>
             </div>
             <div part="preview">
-              <div id="element-to-print">
-            </div>
+                <div id="element-to-print">
+                </div>
             </div>
         </slot>
     </div>
@@ -23,9 +23,21 @@ export class PrintUI extends HTMLElement {
         shadowRoot.appendChild(template.content.cloneNode(true));
     }
 
+    static get observedAttributes() {
+        return ['html'];
+    }
+
     connectedCallback() {
-      this.html = this.getAttribute('html') || '';
-      this.listenForPdfGenerationCall(this, this.html);
+        if (!this.html) {
+            this.html = '';
+        }
+    }
+
+    attributeChangedCallback(name, oldVal, newVal) {
+        if (oldVal !== newVal) {
+            this.html = newVal;
+        }
+        this.listenForPdfGenerationCall(this, this.html);
     }
 
     listenForPdfGenerationCall (elem, htmlString) {

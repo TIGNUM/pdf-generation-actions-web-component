@@ -30,3 +30,9 @@ npm run build
 ```
 npm run test:web
 ```
+
+and open:
+
+```
+[http://127.0.0.1:8082/test/test.html](http://127.0.0.1:8082/test/test.html)
+```
