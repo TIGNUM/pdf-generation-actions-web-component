@@ -4,13 +4,13 @@ Print or pdf generation buttons for generating Tignum reports
 ## How to load the component
 
 ```html
- <actions-report class="style-area" html-report="<p>Test</p>"></actions-report>
+ <actions-report class="style-area" html="<p>Test</p>"></actions-report>
 ```
 
 ## Apply styles to the web component
 ```css
 
-    actions-report.style-area::part(background) {
+    actions-report.style-area::part(ux) {
         text-align: center;
         color: #3d6fb4;
         text-decoration: underline;
@@ -29,4 +29,10 @@ npm run build
 
 ```
 npm run test:web
+```
+
+and open:
+
+```
+[http://127.0.0.1:8082/test/test.html](http://127.0.0.1:8082/test/test.html)
 ```
