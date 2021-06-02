@@ -1,4 +1,7 @@
 # pdf-generation-actions-web-component
+
+[![https://www.npmjs.com Package](https://github.com/TIGNUM/pdf-generation-actions-web-component/actions/workflows/npm-publish-package.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/TIGNUM/pdf-generation-actions-web-component/actions/workflows/npm-publish-package.yml)
+
 Print or pdf generation buttons for generating Tignum reports
 
 ## How to load the component
