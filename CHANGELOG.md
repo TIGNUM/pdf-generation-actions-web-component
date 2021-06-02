@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.2.0...v1.3.0) (2021-06-02)
+
+
+### Features
+
+* delete redundant workflow ([e7bf2a0](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/e7bf2a065b6cc763ab57038fab9d241cba442809))
+
 # [1.2.0](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.1.0...v1.2.0) (2021-06-02)
 
 
