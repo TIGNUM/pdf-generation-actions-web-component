@@ -38,7 +38,6 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
-          scope: tignum
-      - run: npm publish --@tignum:registry=https://registry.npmjs.org/
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
