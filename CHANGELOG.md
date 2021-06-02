@@ -1,3 +1,12 @@
+# [1.5.0](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.4.0...v1.5.0) (2021-06-02)
+
+
+### Features
+
+* incorrect yaml ([03e33e3](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/03e33e36cdd81f9996aa632cccfc0eb28e99d5e1))
+* incorrect yaml ([086f266](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/086f266c26cf9758cdd35a109c1c1bd99645c178))
+* one yml file ([1fd6695](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/1fd669547f5b589db95a5cebc5332a4e8196d159))
+
 # [1.4.0](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.3.0...v1.4.0) (2021-06-02)
 
 
