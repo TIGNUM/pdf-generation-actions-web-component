@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.11.0...v1.12.0) (2021-06-02)
+
+
+### Features
+
+* public repo ([cfaecf8](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/cfaecf81ee849c941858ac9362c7caed1bdd897a))
+
 # [1.11.0](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.10.0...v1.11.0) (2021-06-02)
 
 
