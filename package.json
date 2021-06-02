@@ -1,6 +1,6 @@
 {
   "name": "@tignum/pdf-generation-actions-web-component",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "components actions to print or render the report to a pdf",
   "main": "dist/index.js",
   "scripts": {
