@@ -3,23 +3,23 @@
   <script type="module">
     import {html, fixture, expect} from "@open-wc/testing";
     import {runTests} from "@web/test-runner-mocha";
-    import "../index.js";
+    import "../dist/index.js";
 
     runTests(async () => {
       describe("ActionsReport", () => {
         it('has a default html ""', async () => {
           const el = await fixture(html`<actions-report></actions-report>`);
-          expect(el.html).to.equal("");
+          expect(el.htmlString).to.equal("<p>Hi</p>");
         });
 
         it("can override the html via attribute", async () => {
           const el = await fixture(html`
-            <actions-report html="<p>Title</p>"></actions-report>
+            <actions-report htmlString="<p>Title</p>"></actions-report>
           `);
-          expect(el.html).to.equal("<p>Title</p>");
+          expect(el.htmlString).to.equal("<p>Title</p>");
         });
 
-        it("passes the a11y audit", async () => {
+        it("passes the audit", async () => {
           const el = await fixture(html` <actions-report></actions-report> `);
           await expect(el).shadowDom.to.be.accessible();
         });

@@ -2,14 +2,16 @@
   "name": "pdf-generation-actions-web-component",
   "version": "1.11.0",
   "description": "components actions to print or render the report to a pdf",
-  "main": "dist/index.js",
+  "main": "index.js",
   "module": "index.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "lint": "eslint index.js",
     "release": "semantic-release",
     "demo:web": "http-server -p 8082",
-    "test": "web-test-runner test/actionspdf.test.html --node-resolve --puppeteer"
+    "test": "web-test-runner test/actionspdf.test.html --node-resolve",
+    "start:watch": "web-dev-server --open demo/ --node-resolve --watch",
+    "test:watch": "web-test-runner test/**/*.test.html --node-resolve --watch"
   },
   "repository": "https://github.com/TIGNUM/pdf-generation-actions-web-component.git",
   "author": "tignum",
@@ -73,6 +75,8 @@
     "eslint-plugin-sonarjs": "0.7.0",
     "http-server": "^0.12.3",
     "lit": "^2.0.0-rc.2",
+    "lit-element": "^2.5.1",
+    "lit-html": "^1.4.1",
     "semantic-release": "^17.4.3",
     "webpack": "5.38.1",
     "webpack-cli": "4.7.0"
