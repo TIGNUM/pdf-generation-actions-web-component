@@ -2,8 +2,7 @@
   "name": "pdf-generation-actions-web-component",
   "version": "1.11.0",
   "description": "components actions to print or render the report to a pdf",
-  "main": "index.js",
-  "module": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "lint": "eslint index.js",

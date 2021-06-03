@@ -1,22 +1,46 @@
 # pdf-generation-actions-web-component
 
-[![https://www.npmjs.com Package](https://github.com/TIGNUM/pdf-generation-actions-web-component/actions/workflows/npm-publish-package.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/TIGNUM/pdf-generation-actions-web-component/actions/workflows/npm-publish-package.yml)
+[![https://www.npmjs.com Package](https://github.com/TIGNUM/pdf-generation-actions-web-component/actions/workflows/release-package.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/TIGNUM/pdf-generation-actions-web-component/actions/workflows/release-package.yml)
 
 Print or generate a pdf from the html passed as string to the Web Component
 
+!Note: this package is not including polyfill, be aware of using it with modern browsers as IE11 is not covered
+
 ## How to load the component
 
-    <actions-report class="style-area" html="<p>Test</p>"></actions-report>
+    <print-to-pdf class="style-area" html="<p>Test</p>" fileName="pdf-generated"></print-to-pdf>
 
 
 ## Apply styles to the Web Component
 
-    actions-report.style-area::part(ux) {
-        text-align: center;
-        color: #3d6fb4;
-        text-decoration: underline;
-        background-color: #3d6fb4;
-    }
+Users of this component can set the value of --my-background, using the my-element tag as a CSS selector:
+
+    <style>
+      html {
+        --theme-primary: green;
+        --theme-secondary: aliceblue;
+      }
+      print-to-pdf {
+        --buttons-background: blue;
+        --buttons-text-color: var(--theme-primary);
+        --buttons-background-color: var(--theme-secondary);
+      }
+    </style>
+
+--my-background is configurable per instance of my-element:
+
+    <style>
+      print-to-pdf {
+          --buttons-background: rgb(67, 156, 144);
+      }
+      print-to-pdf.example {
+          --buttons-background: #111111;
+      }
+    </style>
+      
+      <print-to-pdf></print-to-pdf>
+      
+      <print-to-pdf class="example"></print-to-pdf>
 
 ## Build
 

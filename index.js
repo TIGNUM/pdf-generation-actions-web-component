@@ -1,31 +1,31 @@
 import html2pdf from 'html2pdf.js';
 import { html, css, LitElement } from 'lit-element';
 
-export class ActionsReport extends LitElement {
-  static get styles() {
-    return css`
-      :host {
-        display: block;
-        padding: 25px;
-        color: var(--my-element-text-color, #000);
-      }
-    `;
-  }
+export class PrintToPdf extends LitElement {
+  static styles = css`
+    :host {
+      color: var(--buttons-text-color, black);
+      background: var(--buttons-background-color, white);
+      background-color: var(--buttons-background, deepskyblue);
+    }
+  `;
 
   static get properties() {
     return {
-      htmlString: { type: String }
+      html: { type: String },
+      fileName: { type: String }
     };
   }
 
   constructor() {
     super();
-    this.htmlString = '<p>Hi</p>';
+    this.html = '<p>Hi</p>';
+    this.fileName = 'pdf-generated';
   }
 
   firstUpdated() {
     const bodyPdf = this.renderRoot.querySelector('#element-to-print');
-    bodyPdf.innerHTML = this.htmlString;
+    bodyPdf.innerHTML = this.html;
   }
 
   __printPdf() {
@@ -34,7 +34,7 @@ export class ActionsReport extends LitElement {
 
   __getPdf() {
     const elementToPrint = this.shadowRoot.querySelector('#element-to-print');
-    html2pdf().from(elementToPrint).save('generated-pdf');
+    html2pdf().from(elementToPrint).save(this.fileName);
   }
 
   render() {
@@ -53,4 +53,4 @@ export class ActionsReport extends LitElement {
   }
 }
 
-window.customElements.define('actions-report', ActionsReport);
+window.customElements.define('print-to-pdf', PrintToPdf);
