@@ -1,7 +1,11 @@
 import html2pdf from 'html2pdf.js';
-import { html, css, LitElement } from 'lit-element';
+import {html, css, LitElement, customElement, property} from 'lit-element';
 
+@customElement('print-to-pdf')
 export class PrintToPdf extends LitElement {
+  @property() html = "<p>Hi</p>";
+  @property() fileName = "pdf-generated";
+
   static styles = css`
     :host {
       color: var(--buttons-text-color, black);
@@ -10,17 +14,8 @@ export class PrintToPdf extends LitElement {
     }
   `;
 
-  static get properties() {
-    return {
-      html: { type: String },
-      fileName: { type: String }
-    };
-  }
-
   constructor() {
     super();
-    this.html = '<p>Hi</p>';
-    this.fileName = 'pdf-generated';
   }
 
   firstUpdated() {
@@ -52,5 +47,3 @@ export class PrintToPdf extends LitElement {
     `;
   }
 }
-
-window.customElements.define('print-to-pdf', PrintToPdf);
