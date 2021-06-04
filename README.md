@@ -57,4 +57,4 @@ Users of this component can set the value of --my-background, using the my-eleme
 
 and open:
 
-    [http://127.0.0.1:8082/demo/test.html](http://127.0.0.1:8082/demo/test.html)
+    [http://127.0.0.1:8082/demo/index.html](http://127.0.0.1:8082/demo/index.html)
