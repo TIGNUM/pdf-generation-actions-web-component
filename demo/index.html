@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Test</title>
+    <script type="module" src="../dist/index.js"></script>
+    <style>
+      html {
+        --theme-primary: green;
+        --theme-secondary: aliceblue;
+      }
+      print-to-pdf {
+        --buttons-background: blue;
+        --buttons-text-color: var(--theme-primary);
+        --buttons-background-color: var(--theme-secondary);
+      }
+    </style>
+  </head>
+  <body>
+    <print-to-pdf htmlString="<p>Test</p>" fileName="generated-pdf"></print-to-pdf>
+  </body>
+</html>
+

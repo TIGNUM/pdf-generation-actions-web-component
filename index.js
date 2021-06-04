@@ -1,54 +1,49 @@
 import html2pdf from 'html2pdf.js';
+import {html, css, LitElement, customElement, property} from 'lit-element';
 
-const template = document.createElement('template');
-template.innerHTML = `
-    <div>
-        <slot>
-             <div part="ux" id="buttons-section" data-html2canvas-ignore="true">
-                <button class="get-pdf">Download PDF</button>
-                <button id="printPdf" type="button" onclick="window.print()">Print</button>
-            </div>
-            <div part="preview">
-                <div id="element-to-print">
-                </div>
-            </div>
-        </slot>
-    </div>
-`;
+@customElement('print-to-pdf')
+export class PrintToPdf extends LitElement {
+  @property() html = "<p>Hi</p>";
+  @property() fileName = "pdf-generated";
 
-export class PrintUI extends HTMLElement {
-    constructor() {
-        super();
-        const shadowRoot = this.attachShadow({mode: 'open'});
-        shadowRoot.appendChild(template.content.cloneNode(true));
+  static styles = css`
+    :host {
+      color: var(--buttons-text-color, black);
+      background: var(--buttons-background-color, white);
+      background-color: var(--buttons-background, deepskyblue);
     }
+  `;
 
-    static get observedAttributes() {
-        return ['html'];
-    }
+  constructor() {
+    super();
+  }
 
-    connectedCallback() {
-        if (!this.html) {
-            this.html = '';
-        }
-    }
+  firstUpdated() {
+    const bodyPdf = this.renderRoot.querySelector('#element-to-print');
+    bodyPdf.innerHTML = this.html;
+  }
 
-    attributeChangedCallback(name, oldVal, newVal) {
-        if (oldVal !== newVal) {
-            this.html = newVal;
-        }
-        this.listenForPdfGenerationCall(this, this.html);
-    }
+  __printPdf() {
+    window.print();
+  }
 
-    listenForPdfGenerationCall (elem, htmlString) {
-      const shadow = elem.shadowRoot;
-      const elementToPrint = shadow.getElementById('element-to-print');
-      const getPdfElement = shadow.querySelector('.get-pdf');
-      elementToPrint.innerHTML = htmlString;
-      getPdfElement.onclick = () => {
-          html2pdf().from(elementToPrint).save('generatedFile');
-      };
-    }
+  __getPdf() {
+    const elementToPrint = this.shadowRoot.querySelector('#element-to-print');
+    html2pdf().from(elementToPrint).save(this.fileName);
+  }
+
+  render() {
+    return html`
+      <div>
+        <div id="buttons-section" data-html2canvas-ignore="true">
+          <button @click="${this.__getPdf}">Download PDF</button>
+          <button id="printPdf" type="button" @click="${this.__printPdf}">Print</button>
+        </div>
+        <div>
+          <div id="element-to-print">
+          </div>
+        </div>
+      </div>
+    `;
+  }
 }
-
-window.customElements.define('actions-report', PrintUI);
