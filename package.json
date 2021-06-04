@@ -7,7 +7,7 @@
     "build": "webpack --config webpack.config.js",
     "lint": "eslint index.js",
     "release": "semantic-release",
-    "demo:web": "http-server -p 8082 demo/",
+    "demo:web": "http-server -p 8082",
     "test": "web-test-runner test/actionspdf.test.html --node-resolve --coverage",
     "start:watch": "web-dev-server --open demo/ --node-resolve --watch",
     "test:watch": "web-test-runner test/**/*.test.html --node-resolve --watch"
