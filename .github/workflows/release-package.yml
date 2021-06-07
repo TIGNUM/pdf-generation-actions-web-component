@@ -43,3 +43,14 @@ jobs:
       - run: npm publish --access=public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          RELEASE_VERSION: ${{ github.event.client_payload.tag }}
+          SLACK_CHANNEL: tignum_web
+          SLACK_COLOR: ${{ job.status }} # or a specific color like 'green' or '#ff00ff'
+          SLACK_ICON: https://github.com/quintessence/slack-icons/blob/master/images/octocat-spock-slack-icon.png
+          SLACK_MESSAGE: "New version deployed :rocket: Actions Web Component ${{ github.event.client_payload.tag }} new version available!"
+          SLACK_TITLE: ${{ github.event.client_payload.tag }} Actions Pdf Web Component
+          SLACK_USERNAME: GitHubActions
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
