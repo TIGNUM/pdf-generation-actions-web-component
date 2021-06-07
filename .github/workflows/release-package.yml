@@ -19,12 +19,12 @@ jobs:
         run: npm install
       - name: Lint
         run: npm run lint
-      - name: Test Web Component
-        run: npm run test
       - name: Build Web Component
         run: npm run build
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: Test Web Component
+        run: npm run test
       - name: Release
         run: npm run release
         env:
