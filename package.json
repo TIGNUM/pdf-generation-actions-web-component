@@ -8,7 +8,7 @@
     "lint": "eslint index.js",
     "release": "semantic-release",
     "demo:web": "http-server -p 8082",
-    "test": "web-test-runner test/actionspdf.test.html --node-resolve --coverage",
+    "test": "web-test-runner test/actionspdf.test.html --node-resolve --coverage --puppeteer",
     "start:watch": "web-dev-server --open demo/ --node-resolve --watch",
     "test:watch": "web-test-runner test/**/*.test.html --node-resolve --watch"
   },
@@ -85,6 +85,7 @@
     "lit": "^2.0.0-rc.2",
     "lit-element": "^2.5.1",
     "lit-html": "^1.4.1",
+    "puppeteer": "^10.0.0",
     "semantic-release": "^17.4.3",
     "webpack": "5.38.1",
     "webpack-cli": "4.7.0"
