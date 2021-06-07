@@ -1,3 +1,10 @@
+## [1.12.2](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.12.1...v1.12.2) (2021-06-07)
+
+
+### Bug Fixes
+
+* version number ([4b8edd9](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/4b8edd956fcfea002d447a68bdbd5c48f514e4aa))
+
 ## [1.12.1](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.12.0...v1.12.1) (2021-06-07)
 
 
