@@ -1,3 +1,12 @@
+## [1.12.1](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.12.0...v1.12.1) (2021-06-07)
+
+
+### Bug Fixes
+
+* change steps order ([f58fe70](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/f58fe7094d6192ba948150774937124aa4e745f1))
+* eslint error with decorator and export ([e9d6946](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/e9d694617ffb5b63eacdd09d800e29d8eb7eaaeb))
+* wrong parameter on demo html file ([b5d2b64](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/b5d2b649c840463b01f9b793adb2c67e482705fc))
+
 # [1.12.0](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.11.0...v1.12.0) (2021-06-02)
 
 
