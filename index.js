@@ -2,7 +2,7 @@ import html2pdf from 'html2pdf.js';
 import {html, css, LitElement, customElement, property} from 'lit-element';
 
 @customElement('print-to-pdf')
-export class PrintToPdf extends LitElement {
+class PrintToPdf extends LitElement {
   @property() html = "<p>Hi</p>";
   @property() fileName = "pdf-generated";
 
@@ -47,3 +47,5 @@ export class PrintToPdf extends LitElement {
     `;
   }
 }
+
+export default PrintToPdf;
