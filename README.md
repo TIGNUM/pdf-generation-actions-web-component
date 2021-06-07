@@ -1,6 +1,6 @@
 # Pdf generation actions Web Component
 
-[![https://www.npmjs.com published Package](https://github.com/TIGNUM/pdf-generation-actions-web-component/actions/workflows/release-package.yml/badge.svg?branch=main&event=publish-npm)](https://github.com/TIGNUM/pdf-generation-actions-web-component/actions/workflows/release-package.yml)
+[![https://www.npmjs.com published Package](https://github.com/TIGNUM/pdf-generation-actions-web-component/actions/workflows/release-package.yml/badge.svg)](https://github.com/TIGNUM/pdf-generation-actions-web-component/actions/workflows/release-package.yml)
 
 Print or generate a pdf from the html passed as string to the Web Component
 
