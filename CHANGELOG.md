@@ -1,3 +1,10 @@
+## [1.13.1](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.13.0...v1.13.1) (2021-06-09)
+
+
+### Bug Fixes
+
+* package.json remove publish block and github workflow typo ([c2e4543](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/c2e4543b07547ed83a9492f73c1b92dfa25e62a8))
+
 # [1.13.0](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.12.4...v1.13.0) (2021-06-09)
 
 
