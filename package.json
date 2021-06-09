@@ -1,7 +1,7 @@
 {
   "name": "pdf-creation-actions-web-component",
-  "version": "1.13.0",
-  "description": "components actions to print or render the rendered html to a pdf",
+  "version": "1.13.1",
+  "description": "components actions to print or render the report to a pdf",
   "main": "dist/index.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
