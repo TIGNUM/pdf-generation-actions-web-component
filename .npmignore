@@ -1,12 +1,10 @@
 node_modules
-package.json
 package-lock.json
 test
 demo
 coverage
 
 .eslintrc.js
-index.js
 .*
 
 webpack.config.js
