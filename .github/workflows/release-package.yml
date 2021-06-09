@@ -30,14 +30,8 @@ jobs:
       - name: Release
         run: npm run release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Publish to npm
-        run: |
-          echo ${{secrets.NPM_TOKEN}}
-          echo ${{secrets.NPM_TOKEN}} >> ~/.npmrc
-          npm publish --access=public
-        env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
         env:
