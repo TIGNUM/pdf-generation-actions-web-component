@@ -14,7 +14,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0
+          fetch-depth: 0\
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
       - name: Install packages
         run: npm install
       - name: Lint
@@ -31,7 +33,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: npm publish --access=public
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
         env:
