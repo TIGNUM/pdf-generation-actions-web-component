@@ -8,4 +8,5 @@ coverage
 .*
 
 webpack.config.js
+babel.config.json
 
