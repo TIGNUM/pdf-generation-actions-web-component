@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.12.4...v1.13.0) (2021-06-09)
+
+
+### Features
+
+* issue with semantic versioning ([4446591](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/4446591fcc41c73695f38e6d3eb5d38ee1c23131))
+
 ## [1.12.4](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.12.3...v1.12.4) (2021-06-08)
 
 
