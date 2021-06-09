@@ -3,6 +3,7 @@ package-lock.json
 test
 demo
 coverage
+index.js
 
 .eslintrc.js
 .*
