@@ -27,11 +27,18 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Test Web Component
         run: npm run test
+      - name: Who am I?
+        run: npm whoami --registry https://registry.npmjs.org/
+        env:
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
       - name: Release
         run: npm run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: npm publish --access=public
+      - name: Publish to npm
+        run: |
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+          npm publish --access=public
         env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
       - name: Slack Notification
