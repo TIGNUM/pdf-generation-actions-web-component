@@ -1,3 +1,16 @@
+## [1.13.2](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.13.1...v1.13.2) (2021-06-09)
+
+
+### Bug Fixes
+
+* correct npm token ([58ea32f](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/58ea32fab0d2699927b07cc66cf4e88e41249361))
+* npm token ([188ee57](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/188ee577884ac7213a31a46002dfa7dd5e47498f))
+* npm token on release section of workflow ([2badfdd](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/2badfddd3730d6465a9d692c42f36c359ec5872f))
+* package.json remove github semantic release ([a8be409](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/a8be4092416153de62f171014f669b5d481cbd25))
+* package.json remove github semantic release ([e003944](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/e003944e52641e86f900e102fbe053ff488d5202))
+* publish logic ([f0a9a70](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/f0a9a70049897e687f9f571ed4829f3587061f39))
+* remove who am i ([d687a7a](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/d687a7a2b4222336bdae79c86d55b93f312e1351))
+
 ## [1.13.1](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.13.0...v1.13.1) (2021-06-09)
 
 
