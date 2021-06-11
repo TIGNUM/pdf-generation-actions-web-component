@@ -1,3 +1,10 @@
+## [1.13.4](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.13.3...v1.13.4) (2021-06-11)
+
+
+### Bug Fixes
+
+* remove publish to github packages ([63cb162](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/63cb162701ba54c84c786a7aa44e745148a9cb53))
+
 ## [1.13.3](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.13.2...v1.13.3) (2021-06-11)
 
 
