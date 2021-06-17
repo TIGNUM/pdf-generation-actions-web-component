@@ -11,6 +11,10 @@ class PrintToPdf extends LitElement {
       color: var(--content-text-color, black);
       background: var(--content-background-color, white);
     }
+    #buttons-section {
+      position: var(--buttons-section-position, relative);
+      top: var(--buttons-section-top, relative);
+    }
     #buttons-section button {
       color: var(--buttons-text-color, white);
       background: var(--buttons-background, black);
@@ -23,7 +27,6 @@ class PrintToPdf extends LitElement {
       padding: var(--buttons-padding, 1rem);
       text-transform: var(--buttons-text-transform, lowercase);
       cursor: var(--buttons-cursor, pointer);
-      position: var(--buttons-position, relative)
     }
     #buttons-section button:hover {
       opacity: var(--buttons-opacity, .5)
