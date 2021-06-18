@@ -8,9 +8,28 @@ class PrintToPdf extends LitElement {
 
   static styles = css`
     :host {
-      color: var(--buttons-text-color, black);
-      background: var(--buttons-background-color, white);
-      background-color: var(--buttons-background, deepskyblue);
+      color: var(--content-text-color, black);
+      background: var(--content-background-color, white);
+    }
+    #buttons-section {
+      position: var(--buttons-section-position, relative);
+      top: var(--buttons-section-top, relative);
+    }
+    #buttons-section button {
+      color: var(--buttons-text-color, white);
+      background: var(--buttons-background, black);
+      background-color: var(--buttons-background-color, black);
+      border: var(--buttons-border, 1px dashed black);
+      border-radius: var(--buttons-border-radius, white);
+      font-size: var(--buttons-font-size, 1rem);
+      height: var(--buttons-height, auto);
+      min-width: var(--buttons-min-width, auto);
+      padding: var(--buttons-padding, 1rem);
+      text-transform: var(--buttons-text-transform, lowercase);
+      cursor: var(--buttons-cursor, pointer);
+    }
+    #buttons-section button:hover {
+      opacity: var(--buttons-opacity, .5)
     }
   `;
 
@@ -34,16 +53,11 @@ class PrintToPdf extends LitElement {
 
   render() {
     return html`
-      <div>
         <div id="buttons-section" data-html2canvas-ignore="true">
           <button @click="${this.__getPdf}">Download PDF</button>
-          <button id="printPdf" type="button" @click="${this.__printPdf}">Print</button>
+          <button type="button" @click="${this.__printPdf}">Print</button>
         </div>
-        <div>
-          <div id="element-to-print">
-          </div>
-        </div>
-      </div>
+        <div id="element-to-print"></div>
     `;
   }
 }
