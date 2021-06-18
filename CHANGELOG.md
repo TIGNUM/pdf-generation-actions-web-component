@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.13.4...v1.14.0) (2021-06-18)
+
+
+### Features
+
+* add more possibilities for add styles to buttons ([#6](https://github.com/TIGNUM/pdf-generation-actions-web-component/issues/6)) ([8febd0a](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/8febd0a431afda49761994dcdd0d51075a02f802))
+
 ## [1.13.4](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.13.3...v1.13.4) (2021-06-11)
 
 
