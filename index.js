@@ -31,6 +31,9 @@ class PrintToPdf extends LitElement {
     #buttons-section button:hover {
       opacity: var(--buttons-opacity, .5)
     }
+    #buttons-section .buttons-section__print-btn {
+      display: var(--button-print-display, 'block')
+    }
   `;
 
   constructor() {
@@ -55,7 +58,7 @@ class PrintToPdf extends LitElement {
     return html`
         <div id="buttons-section" data-html2canvas-ignore="true">
           <button @click="${this.__getPdf}">Download PDF</button>
-          <button type="button" @click="${this.__printPdf}">Print</button>
+          <button class="buttons-section__print-btn" type="button" @click="${this.__printPdf}">Print</button>
         </div>
         <div id="element-to-print"></div>
     `;
