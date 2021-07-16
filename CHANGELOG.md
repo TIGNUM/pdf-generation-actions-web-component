@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.14.0...v1.15.0) (2021-07-16)
+
+
+### Features
+
+* make the btn to print optional ([7df8dc1](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/7df8dc1b2fd1af4d7a804087f4088864938a6f0b))
+
 # [1.14.0](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.13.4...v1.14.0) (2021-06-18)
 
 
