@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.15.0...v1.16.0) (2021-08-12)
+
+
+### Features
+
+* add option of positioning ([a7b6f94](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/a7b6f94fc0637a66b16dcdd442e3c9d2cac394d1))
+
 # [1.15.0](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.14.0...v1.15.0) (2021-07-16)
 
 
