@@ -16,6 +16,7 @@ class PrintToPdf extends LitElement {
       top: var(--buttons-section-top, relative);
       right: var(--buttons-section-right, 0);
       left: var(--buttons-section-left, auto);
+      z-index: var(--button-section-z-index, 0);
     }
     #buttons-section button {
       color: var(--buttons-text-color, white);
