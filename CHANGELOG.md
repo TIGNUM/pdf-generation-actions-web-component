@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.16.0...v1.17.0) (2021-08-13)
+
+
+### Features
+
+* add z-index to the btns ([4ba00d6](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/4ba00d660459e497d598338587c897bfd1d3416b))
+
 # [1.16.0](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.15.0...v1.16.0) (2021-08-12)
 
 
