@@ -10,38 +10,49 @@ Print or generate a pdf from the html passed as string to the Web Component
 
 ## How to load the component
 
-    <print-to-pdf class="style-area" html="<p>Test</p>" fileName="pdf-generated"></print-to-pdf>
+    <print-to-pdf html="<p>Test</p>" fileName="pdf-generated"></print-to-pdf>
 
 ## Apply styles to the Web Component
 
-Users of this component can set the value of --my-background, using the my-element tag as a CSS selector:
+This component has some styles that can be editable, and are defined in index.js in [static styles](https://github.com/TIGNUM/pdf-generation-actions-web-component/blob/main/index.js).
+Example: By default the buttons section are configured like:
 
-    <style>
-      html {
-        --theme-primary: green;
-        --theme-secondary: aliceblue;
-      }
-      print-to-pdf {
-        --buttons-background: blue;
-        --buttons-text-color: var(--theme-primary);
-        --buttons-background-color: var(--theme-secondary);
-      }
-    </style>
+    #buttons-section {
+      position: var(--buttons-section-position, relative);
+      top: var(--buttons-section-top, relative);
+      right: var(--buttons-section-right, 0);
+      left: var(--buttons-section-left, auto);
+      z-index: var(--button-section-z-index, 0);
+    }
 
---my-background is configurable per instance of my-element:
+Users of this component can set the position of the buttons section overwriting the variable --buttons-section-position in print-to-pdf tag:
 
     <style>
       print-to-pdf {
-          --buttons-background: rgb(67, 156, 144);
-      }
-      print-to-pdf.example {
-          --buttons-background: #111111;
-      }
+        --buttons-section-position: absolute;
+        --buttons-background-color: #0000ff;
+        --buttons-border: 1px solid #0000ff;
+        --buttons-border-radius: 15px;
+        --buttons-text-color: white;
+        --buttons-section-top: 8px;
+    }
     </style>
-      
-      <print-to-pdf></print-to-pdf>
-      
-      <print-to-pdf class="example"></print-to-pdf>
+
+It is also possible add css class specification:
+
+    <print-to-pdf class="my-blue-element" html="<p>Test 1</p>" fileName="pdf-generated-1"></print-to-pdf>
+    <print-to-pdf class="my-red-element" html="<p>Test 2</p>" fileName="pdf-generated-2"></print-to-pdf>
+
+    <style>
+      print-to-pdf.my-blue-element {
+        --buttons-background-color: #0000ff;
+      }
+      print-to-pdf.my-red-element {
+        --buttons-background-color: ##ff0000;
+      }
+    }
+    </style>
+
 
 ## Build
 
