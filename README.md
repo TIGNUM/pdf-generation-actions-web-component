@@ -16,6 +16,10 @@ Print or generate a pdf from the html passed as string to the Web Component
 
 Button to trigger the download of the pdf must emit a custom event and cass pass on the attributes the name of the file
 
+    <button id="print-pdf" onclick="downloadPdf('filename-requested')">Download Pdf</button>
+
+Function that will emit the custom event:
+
     function downloadPdf(filename = 'no-file-name-provided') {
         const event = new CustomEvent("download-pdf", {
           composed: true,
