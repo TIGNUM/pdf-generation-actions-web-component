@@ -52,15 +52,16 @@ class PrintToPdf extends LitElement {
     window.print();
   }
 
-  __getPdf() {
+  download(passedFilename) {
     const elementToPrint = this.shadowRoot.querySelector('#element-to-print');
-    html2pdf().from(elementToPrint).save(this.fileName);
+    const filename = passedFilename || this.filename;
+    html2pdf().from(elementToPrint).save(filename);
   }
 
   render() {
     return html`
         <div id="buttons-section" data-html2canvas-ignore="true">
-          <button @click="${this.__getPdf}">Download PDF</button>
+          <button @click="${this.download}">Download PDF</button>
           <button class="buttons-section__print-btn" type="button" @click="${this.__printPdf}">Print</button>
         </div>
         <div id="element-to-print"></div>

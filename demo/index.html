@@ -22,7 +22,7 @@
     </style>
   </head>
   <body>
-    <button onclick="downloadPdf()">Click me</button>
+    <button onclick="document.querySelector('print-to-pdf').download()">Click me</button>
     <print-to-pdf html="<p>Test</p>" fileName="generated-pdf"></print-to-pdf>
   </body>
 </html>
