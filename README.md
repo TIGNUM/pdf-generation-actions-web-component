@@ -10,7 +10,23 @@ Print or generate a pdf from the html passed as string to the Web Component
 
 ## How to load the component
 
-    <print-to-pdf html="<p>Test</p>" fileName="pdf-generated"></print-to-pdf>
+    <print-to-pdf html="<p>Test</p>"></print-to-pdf>
+
+## Web Component listens for event "download-pdf"
+
+Button to trigger the download of the pdf must emit a custom event and cass pass on the attributes the name of the file
+
+    function downloadPdf(filename = 'no-file-name-provided') {
+        const event = new CustomEvent("download-pdf", {
+          composed: true,
+          bubbles: true,
+          detail: {
+            fileName: filename,
+          },
+        });
+        const obj = document.getElementById("print-pdf");
+        obj.dispatchEvent(event);
+    }
 
 ## Apply styles to the Web Component
 

@@ -4,7 +4,6 @@ import {html, css, LitElement, customElement, property} from 'lit-element';
 @customElement('print-to-pdf')
 class PrintToPdf extends LitElement {
   @property() html = "<p>Hi</p>";
-  @property() fileName = "pdf-generated";
 
   static styles = css`
     :host {
