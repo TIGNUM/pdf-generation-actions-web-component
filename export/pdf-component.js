@@ -41,6 +41,17 @@ class PrintToPdf extends LitElement {
 
   constructor() {
     super();
+    this.__getPdf = this.__getPdf.bind(this);
+  }
+
+  connectedCallback() {
+    super.connectedCallback && super.connectedCallback();
+    window.addEventListener('download-pdf', this.__getPdf);
+  }
+
+  disconnectedCallback() {
+    window.removeEventListener('download-pdf', this.__getPdf);
+    super.disconnectedCallback && super.disconnectedCallback();
   }
 
   firstUpdated() {
@@ -52,20 +63,16 @@ class PrintToPdf extends LitElement {
     window.print();
   }
 
-  __getPdf() {
+  __getPdf(event) {
     const elementToPrint = this.shadowRoot.querySelector('#element-to-print');
-    html2pdf().from(elementToPrint).save(this.fileName);
+    html2pdf().from(elementToPrint).save(event.detail.fileName);
   }
 
   render() {
     return html`
-        <div id="buttons-section" data-html2canvas-ignore="true">
-          <button @click="${this.__getPdf}">Download PDF</button>
-          <button class="buttons-section__print-btn" type="button" @click="${this.__printPdf}">Print</button>
-        </div>
         <div id="element-to-print"></div>
     `;
   }
-};
+}
 
 export default PrintToPdf;
