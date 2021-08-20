@@ -22,7 +22,21 @@
     </style>
   </head>
   <body>
-    <print-to-pdf html="<p>Test</p>" fileName="generated-pdf"></print-to-pdf>
+    <script>
+      function downloadPdf(filename = 'no-file-name-provided') {
+        const event = new CustomEvent("download-pdf", {
+          composed: true,
+          bubbles: true,
+          detail: {
+            fileName: filename,
+          },
+        });
+        const obj = document.getElementById("print-pdf");
+        obj.dispatchEvent(event);
+      }
+    </script>
+    <button id="print-pdf" onclick="downloadPdf('filename-requested')">Download Pdf</button>
+    <print-to-pdf html="<p>Test</p>"></print-to-pdf>
   </body>
 </html>
 

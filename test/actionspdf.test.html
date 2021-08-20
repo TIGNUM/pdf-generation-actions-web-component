@@ -12,23 +12,11 @@
           expect(el.html).to.equal("<p>Hi</p>");
         });
 
-        it('has a default fileName "pdf-generated"', async () => {
-          const el = await fixture(html`<print-to-pdf></print-to-pdf>`);
-          expect(el.fileName).to.equal("pdf-generated");
-        });
-
         it("can override the html via attribute", async () => {
           const el = await fixture(html`
             <print-to-pdf html="<p>Title</p>"></print-to-pdf>
           `);
           expect(el.html).to.equal("<p>Title</p>");
-        });
-
-        it("can override the fileName via attribute", async () => {
-          const el = await fixture(html`
-            <print-to-pdf fileName="filetest"></print-to-pdf>
-          `);
-          expect(el.fileName).to.equal("filetest");
         });
 
         it("passes the audit", async () => {
