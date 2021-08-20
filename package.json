@@ -1,6 +1,6 @@
 {
   "name": "pdf-creation-actions-web-component",
-  "version": "1.17.0",
+  "version": "1.17.1",
   "description": "components actions to print or render the report to a pdf",
   "main": "dist/index.js",
   "scripts": {
