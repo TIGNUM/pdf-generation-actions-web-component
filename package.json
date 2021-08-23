@@ -9,7 +9,7 @@
     "release": "semantic-release",
     "demo:web": "http-server -p 8082",
     "test": "web-test-runner src/test/actionspdf.test.html --node-resolve --puppeteer",
-    "start:watch": "web-dev-server --open demo/ --node-resolve --watch",
+    "start:watch": "web-dev-server --open demo/index.html --node-resolve --watch",
     "test:watch": "web-test-runner test/**/*.test.html --node-resolve --watch"
   },
   "repository": "https://github.com/TIGNUM/pdf-generation-actions-web-component.git",
