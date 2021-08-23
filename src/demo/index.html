@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Test</title>
+    <script type="module" src="../../dist/index.js"></script>
+  </head>
+  <body>
+    <script>
+      function downloadPdf(filename = 'no-file-name-provided') {
+        const event = new CustomEvent("download-pdf", {
+          composed: true,
+          bubbles: true,
+          detail: {
+            fileName: filename,
+          },
+        });
+        const obj = document.getElementById("print-pdf");
+        obj.dispatchEvent(event);
+      }
+    </script>
+    <button id="print-pdf" onclick="downloadPdf('filename-requested')">Download Pdf</button>
+    <print-to-pdf html="<p>Test2 to test</p>"></print-to-pdf>
+  </body>
+</html>
+
