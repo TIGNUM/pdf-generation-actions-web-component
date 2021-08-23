@@ -3,27 +3,21 @@ import { defineComponent, onMounted, onUnmounted} from 'vue';
 import html2pdf from 'html2pdf.js';
 
 export default defineComponent({
-  name: 'PdfComponent',
   template: '<div id="element-to-print"></div>',
-  methods: {
-    getPdf(event) {
-      const elementToPrint = this.shadowRoot.querySelector('#element-to-print');
-      console.log('element',  elementToPrint, event)
-      html2pdf().from(elementToPrint).save(event.detail.fileName);
-    },
-    connectedCallback() {
-      console.log('entro al setup', window);
-      window.addEventListener('download-pdf', this.getPdf);
-    },
-    disconnectedCallback() {
-      window.removeEventListener('download-pdf', this.getPdf);
-    }
+  getPdf: function(event) {
+    const elementToPrint = this.shadowRoot.querySelector('#element-to-print');
+    html2pdf().from(elementToPrint).save(event.detail.fileName);
   },
-  setup() {
-    console.log('entro al setup');
-    this.connectedCallback();
-    onMounted(() => { connectedCallback() })
-    onUnmounted(() => { disconnectedCallback() })
+  connectedCallback: function() {
+    debugger;
+    window.addEventListener('download-pdf', this.getPdf);
+  },
+  disconnectedCallback: function() {
+    window.removeEventListener('download-pdf', this.getPdf);
+  },
+  setup: function() {
+    onMounted(() => this.connectedCallback);
+    onUnmounted(() => this.disconnectedCallback);
   },
   styles: [
     `:host {
