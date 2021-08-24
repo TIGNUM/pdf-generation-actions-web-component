@@ -14,7 +14,7 @@ Print or generate a pdf from the html passed as string to the Web Component
 
 ## Web Component listens for event "download-pdf"
 
-Button to trigger the download of the pdf must emit a custom event and cass pass on the attributes the name of the file
+Button to trigger the download of the pdf must emit a custom event and pass on the attributes the name of the file
 
     <button id="print-pdf" onclick="downloadPdf('filename-requested')">Download Pdf</button>
 
@@ -35,26 +35,19 @@ Function that will emit the custom event:
 ## Apply styles to the Web Component
 
 This component has some styles that can be editable, and are defined in index.js in [static styles](https://github.com/TIGNUM/pdf-generation-actions-web-component/blob/main/index.js).
-Example: By default the buttons section are configured like:
+Example: By default the color and background are configured like:
 
-    #buttons-section {
-      position: var(--buttons-section-position, relative);
-      top: var(--buttons-section-top, relative);
-      right: var(--buttons-section-right, 0);
-      left: var(--buttons-section-left, auto);
-      z-index: var(--button-section-z-index, 0);
+    :host {
+      color: var(--content-text-color, black);
+      background: var(--content-background-color, white);
     }
 
-Users of this component can set the position of the buttons section overwriting the variable --buttons-section-position in print-to-pdf tag:
+The color and background can be modify by change this variables --content-text-color and ==content-background-color in print-to-pdf tag:
 
     <style>
       print-to-pdf {
-        --buttons-section-position: absolute;
-        --buttons-background-color: #0000ff;
-        --buttons-border: 1px solid #0000ff;
-        --buttons-border-radius: 15px;
-        --buttons-text-color: white;
-        --buttons-section-top: 8px;
+        --content-text-color: white;
+        --content-background-color: #0000ff;
     }
     </style>
 
@@ -65,10 +58,10 @@ It is also possible add css class specification:
 
     <style>
       print-to-pdf.my-blue-element {
-        --buttons-background-color: #0000ff;
+        --content-text-color: black;
       }
       print-to-pdf.my-red-element {
-        --buttons-background-color: ##ff0000;
+        --content-text-color: red;
       }
     }
     </style>
