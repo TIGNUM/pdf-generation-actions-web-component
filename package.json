@@ -2,16 +2,20 @@
   "name": "pdf-creation-actions-web-component",
   "version": "1.17.0",
   "description": "components actions to print or render the report to a pdf",
-  "main": "dist/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js",
+    "build": "vite build",
     "lint": "eslint index.js",
     "release": "semantic-release",
     "demo:web": "http-server -p 8082",
-    "test": "web-test-runner src/test/actionspdf.test.html --node-resolve --puppeteer",
+    "test": "web-test-runner test/actionspdf.test.html --node-resolve --puppeteer",
     "start:watch": "web-dev-server --open demo/index.html --node-resolve --watch",
     "test:watch": "web-test-runner test/**/*.test.html --node-resolve --watch"
   },
+  "files": [
+    "dist"
+  ],
   "repository": "https://github.com/TIGNUM/pdf-generation-actions-web-component.git",
   "author": "tignum",
   "license": "MIT",
@@ -20,9 +24,10 @@
   },
   "homepage": "https://github.com/TIGNUM/pdf-generation-actions-web-component#readme",
   "dependencies": {
+    "@vitejs/plugin-vue": "^1.4.0",
+    "@vueuse/core": "^5.3.0",
     "css-loader": "^6.2.0",
     "html2pdf.js": "0.9.3",
-    "@vueuse/core": "^5.3.0",
     "vue": "^3.2.1"
   },
   "release": {
@@ -87,6 +92,8 @@
     "http-server": "^0.12.3",
     "puppeteer": "^10.0.0",
     "semantic-release": "^17.4.3",
+    "vite": "^2.5.0",
+    "vite-dts": "^1.0.3",
     "vue": "^3.2.1",
     "vue-loader": "^16.5.0",
     "webpack": "5.38.1",
