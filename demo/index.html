@@ -2,10 +2,8 @@
 <html lang="en">
   <head>
     <title>Test</title>
-  </head>
-  <body>
     <script>
-      function downloadPdf(filename = 'no-file-name-provided') {
+      const downloadPdf = function(filename = 'no-file-name-provided') {
         const event = new CustomEvent("download-pdf", {
           composed: true,
           bubbles: true,
@@ -17,8 +15,10 @@
         obj.dispatchEvent(event);
       }
     </script>
+  </head>
+  <body>
     <button id="print-pdf" onclick="downloadPdf('filename-requested')">Download Pdf</button>
-    <print-to-pdf html="Test 2 to test"></print-to-pdf>
+    <print-to-pdf htmlpdf="<p>Test 2 to test</p>"></print-to-pdf>
     <script type="module" src="../dist/index.es.js"></script>
   </body>
 </html>

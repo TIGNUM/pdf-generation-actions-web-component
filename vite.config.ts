@@ -13,5 +13,15 @@ export default defineConfig({
     // Reduce bloat from legacy polyfills.
     target: 'esnext',
     minify: true
-  }
+  },
+  plugins: [
+    vue({
+      template: {
+        compilerOptions: {
+          // treat all tags with a dash as custom elements
+          isCustomElement: tag => tag.includes('-')
+        }
+      }
+    })
+  ]
 });
