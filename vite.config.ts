@@ -4,7 +4,7 @@ import vue from '@vitejs/plugin-vue';
 export default defineConfig({
   build: {
     lib: {
-      entry: 'index.js',
+      entry: 'index.ts',
       name: 'PrintToPdf',
       formats: ['es'],
       fileName: format => `index.${format}.js`

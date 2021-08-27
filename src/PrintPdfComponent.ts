@@ -1,11 +1,12 @@
+// @ts-ignore
 import html2pdf from "html2pdf.js";
 import {onMounted, onUnmounted} from "vue";
 
 export const CustomPdfPrintElement = {
   props: ['html'],
   template: '<span id="element-to-print">{{html}}</span>',
-  setup: function(props, context) {
-    const getPdf = function(event) {
+  setup: function(props: any, context: any) {
+    const getPdf = function(event: any) {
       const elementToPrint = document.getElementById('element-to-print');
       html2pdf().from(elementToPrint).save(event.detail.fileName);
     };

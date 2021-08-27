@@ -6,7 +6,7 @@
   "module": "./dist/index.js",
   "scripts": {
     "build": "vite build",
-    "lint": "eslint index.js",
+    "lint": "eslint . --ext .ts",
     "release": "semantic-release",
     "demo:web": "http-server -p 8082",
     "test": "web-test-runner test/actionspdf.test.html --node-resolve --puppeteer",
@@ -97,6 +97,10 @@
     "vue": "^3.2.1",
     "vue-loader": "^16.5.0",
     "webpack": "5.38.1",
-    "webpack-cli": "4.7.0"
+    "webpack-cli": "4.7.0",
+    "tslib": "^2.3.0",
+    "typescript": "^4.3.5",
+    "vite-plugin-components": "^0.13.2",
+    "vue-tsc": "^0.2.2"
   }
 }
