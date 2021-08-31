@@ -3,7 +3,7 @@ import {html, css, LitElement, customElement, property} from 'lit-element';
 
 @customElement('print-to-pdf')
 class PrintToPdf extends LitElement {
-  @property() html = "<p>Hi</p>";
+  @property() html = "<p>No content passed</p>";
 
   static styles = css`
     :host {
@@ -14,16 +14,16 @@ class PrintToPdf extends LitElement {
 
   constructor() {
     super();
-    this.__getPdf = this.__getPdf.bind(this);
+    this.__downloadPdf = this.__downloadPdf.bind(this);
   }
 
   connectedCallback() {
     super.connectedCallback && super.connectedCallback();
-    window.addEventListener('download-pdf', this.__getPdf);
+    window.addEventListener('download-pdf', this.__downloadPdf);
   }
 
   disconnectedCallback() {
-    window.removeEventListener('download-pdf', this.__getPdf);
+    window.removeEventListener('download-pdf', this.__downloadPdf);
     super.disconnectedCallback && super.disconnectedCallback();
   }
 
@@ -36,9 +36,14 @@ class PrintToPdf extends LitElement {
     window.print();
   }
 
-  __getPdf(event) {
+  __downloadPdf(event) {
     const elementToPrint = this.shadowRoot.querySelector('#element-to-print');
-    html2pdf().from(elementToPrint).save(event.detail.fileName);
+    if (!elementToPrint) {
+      console.warn('The web component has not rendered yet, retrying in 100ms');
+      setTimeout( ()=>this.__downloadPdf(event), 100);
+      return
+    }
+    html2pdf().from(elementToPrint).save(event.detail?.fileName || 'file.pdf');
   }
 
   render() {
