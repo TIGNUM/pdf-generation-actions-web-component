@@ -1,3 +1,15 @@
+# [1.18.0](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.17.0...v1.18.0) (2021-08-31)
+
+
+### Bug Fixes
+
+* using template to render the content, avoid injection ([399bb38](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/399bb386e50791cbaf3f07b27c20f3b03b5cb506))
+
+
+### Features
+
+* retry download PDF event if component has not rendered yet ([1db0eef](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/1db0eef054bd0156c0db32372f12796ed94329f4))
+
 # [1.17.0](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.16.0...v1.17.0) (2021-08-13)
 
 
