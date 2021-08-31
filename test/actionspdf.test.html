@@ -9,7 +9,7 @@
       describe("ActionsReport", () => {
         it('has a default html ""', async () => {
           const el = await fixture(html`<print-to-pdf></print-to-pdf>`);
-          expect(el.html).to.equal("<p>Hi</p>");
+          expect(el.html).to.equal("<p>No content passed</p>");
         });
 
         it("can override the html via attribute", async () => {

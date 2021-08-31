@@ -1,5 +1,6 @@
 import html2pdf from 'html2pdf.js';
 import {html, css, LitElement, customElement, property} from 'lit-element';
+import {unsafeHTML} from "lit-html/directives/unsafe-html";
 
 @customElement('print-to-pdf')
 class PrintToPdf extends LitElement {
@@ -27,11 +28,6 @@ class PrintToPdf extends LitElement {
     super.disconnectedCallback && super.disconnectedCallback();
   }
 
-  firstUpdated() {
-    const bodyPdf = this.renderRoot.querySelector('#element-to-print');
-    bodyPdf.innerHTML = this.html;
-  }
-
   __printPdf() {
     window.print();
   }
@@ -47,8 +43,9 @@ class PrintToPdf extends LitElement {
   }
 
   render() {
-    return html`<div id="element-to-print"></div>`;
+    return html `<div id="element-to-print">${unsafeHTML(this.html)}</div>`;
   }
+
 }
 
 export default PrintToPdf;
