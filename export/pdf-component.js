@@ -16,20 +16,36 @@ class PrintToPdf extends LitElement {
   constructor() {
     super();
     this.__downloadPdf = this.__downloadPdf.bind(this);
+    this.__scrollTop = this.__scrollTop.bind(this);
   }
 
   connectedCallback() {
     super.connectedCallback && super.connectedCallback();
-    window.addEventListener('download-pdf', this.__downloadPdf);
+    this.shadowRoot.addEventListener('download-pdf', this.__downloadPdf);
+    this.shadowRoot.addEventListener('scrollTop', this.__scrollTop);
   }
 
   disconnectedCallback() {
-    window.removeEventListener('download-pdf', this.__downloadPdf);
+    this.shadowRoot.removeEventListener('download-pdf', this.__downloadPdf);
+    this.shadowRoot.removeEventListener('scrollTop', this.__scrollTop);
     super.disconnectedCallback && super.disconnectedCallback();
+  }
+
+  updated() {
+    const event = new CustomEvent('updated', {
+      bubbles: true,
+      composed: true
+    });
+    this.shadowRoot.dispatchEvent(event);
   }
 
   __printPdf() {
     window.print();
+  }
+
+  __scrollTop() {
+    const e = this.shadowRoot.querySelector('#element-to-print');
+    e.scrollTop = 0;
   }
 
   __downloadPdf(event) {
@@ -39,7 +55,15 @@ class PrintToPdf extends LitElement {
       setTimeout( ()=>this.__downloadPdf(event), 100);
       return
     }
-    html2pdf().from(elementToPrint).save(event.detail?.fileName || 'file.pdf');
+    try {
+    html2pdf().set({html2canvas: {scrollX: 0, scrollY:0}}).from(elementToPrint).save(event.detail?.fileName || 'file.pdf').then(()=>{
+        const downloadedEvent = new Event('downloaded');
+        this.dispatchEvent(downloadedEvent);
+      });
+    }
+    catch(error) {
+      console.log(error);
+    }
   }
 
   render() {
