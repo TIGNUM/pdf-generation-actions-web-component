@@ -1,3 +1,10 @@
+# [1.19.0](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.18.0...v1.19.0) (2021-09-02)
+
+
+### Features
+
+* add local event listeners, fire event when downloaded ([#20](https://github.com/TIGNUM/pdf-generation-actions-web-component/issues/20)) ([731d597](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/731d59716e1d172ddbfa229017efc4016cd06ca6))
+
 # [1.18.0](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.17.0...v1.18.0) (2021-08-31)
 
 
