@@ -21,16 +21,17 @@ Button to trigger the download of the pdf must emit a custom event and pass on t
 Function that will emit the custom event:
 
     function downloadPdf(filename = 'no-file-name-provided') {
-        const event = new CustomEvent("download-pdf", {
-          composed: true,
-          bubbles: true,
-          detail: {
-            fileName: filename,
-          },
-        });
-        const obj = document.getElementById("print-pdf");
-        obj.dispatchEvent(event);
+      const event = new CustomEvent("download-pdf", {
+        composed: true,
+        bubbles: true,
+        detail: {
+          fileName: filename,
+        },
+      });
+      document.getElementById('pdfComponent').shadowRoot.dispatchEvent(event);
     }
+
+    This part: document.getElementById('pdfComponent') can be replaced with the any access way to the component(id, class...) that contain the shadowRoot.
 
 ## Apply styles to the Web Component
 
