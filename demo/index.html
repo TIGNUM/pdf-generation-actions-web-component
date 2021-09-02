@@ -31,12 +31,11 @@
             fileName: filename,
           },
         });
-        const obj = document.getElementById("print-pdf");
-        obj.dispatchEvent(event);
+        document.getElementById('pdfComponent').shadowRoot.dispatchEvent(event);
       }
     </script>
     <button id="print-pdf" onclick="downloadPdf('filename-requested')">Download Pdf</button>
-    <print-to-pdf html="<p>Test</p>"></print-to-pdf>
+    <print-to-pdf id="pdfComponent" html="<p>Test</p>"></print-to-pdf>
   </body>
 </html>
 
