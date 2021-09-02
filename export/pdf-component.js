@@ -44,25 +44,30 @@ class PrintToPdf extends LitElement {
   }
 
   __scrollTop() {
-    const e = this.shadowRoot.querySelector('#element-to-print');
-    e.scrollTop = 0;
+    const element = this.shadowRoot.querySelector('#element-to-print');
+    element.scrollTop = 0;
   }
 
   __downloadPdf(event) {
     const elementToPrint = this.shadowRoot.querySelector('#element-to-print');
     if (!elementToPrint) {
       console.warn('The web component has not rendered yet, retrying in 100ms');
-      setTimeout( ()=>this.__downloadPdf(event), 100);
+      setTimeout( () => this.__downloadPdf(event), 100);
       return
     }
     try {
-    html2pdf().set({html2canvas: {scrollX: 0, scrollY:0}}).from(elementToPrint).save(event.detail?.fileName || 'file.pdf').then(()=>{
+      html2pdf().set({
+        html2canvas: {
+          scrollX: 0,
+          scrollY:0
+        }
+      }).from(elementToPrint).save(event.detail?.fileName || 'file.pdf').then(() => {
         const downloadedEvent = new Event('downloaded');
         this.dispatchEvent(downloadedEvent);
       });
     }
     catch(error) {
-      console.log(error);
+      throw new Error(error);
     }
   }
 
