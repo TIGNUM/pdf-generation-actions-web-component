@@ -8,6 +8,15 @@ Print or generate a pdf from the html passed as string to the Web Component
 
 !Note: this package is not including polyfill, be aware of using it with modern browsers as IE11 is not covered
 
+## Install the component
+
+    npm i pdf-creation-actions-web-component
+
+## Import the component
+
+    import 'pdf-creation-actions-web-component';
+
+
 ## How to load the component
 
     <print-to-pdf html="<p>Test</p>"></print-to-pdf>

@@ -1,25 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Test</title>
+    <title>PDF Generation</title>
     <script type="module" src="../dist/index.js"></script>
-    <style>
-      html {
-        --theme-primary: green;
-        --theme-secondary: aliceblue;
-      }
-      print-to-pdf {
-        --buttons-text-color: red;
-        --buttons-background-color: white;
-        --buttons-border: 2px solid red;
-        --buttons-border-radius: 15px;
-        --buttons-font-size: .875rem;
-        --buttons-height: 40px !important;
-        --buttons-min-width: 64px;
-        --buttons-padding: 0 16px;
-        --buttons-text-transform: uppercase;
-      }
-    </style>
   </head>
   <body>
     <script>
@@ -35,7 +18,7 @@
       }
     </script>
     <button id="print-pdf" onclick="downloadPdf('filename-requested')">Download Pdf</button>
-    <print-to-pdf id="pdfComponent" html="<p>Test</p>"></print-to-pdf>
+    <print-to-pdf id="pdfComponent" html="<div style='width: 210mm; margin: 10px auto; height: 60mm; box-shadow: 2px 1px 5px 2px #00000040; padding-top: 5px; text-align: center;'> <p>Great Pdf generation actions Web Component</p> </div>"></print-to-pdf>
   </body>
 </html>
 
