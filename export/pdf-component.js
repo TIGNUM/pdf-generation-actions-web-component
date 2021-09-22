@@ -61,14 +61,6 @@ class PrintToPdf extends LitElement {
           scrollX: 0,
           scrollY:0,
           scale: 2
-        },
-        image: {
-          type: 'jpeg',
-          quality: 1
-        },
-        jsPDF: {
-          unit: 'in',
-          format: 'a4'
         }
       }).from(elementToPrint).save(event.detail?.fileName || 'file.pdf').then(() => {
         const downloadedEvent = new Event('downloaded');
