@@ -1,3 +1,10 @@
+## [1.19.1](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.19.0...v1.19.1) (2021-09-22)
+
+
+### Bug Fixes
+
+* increase the quality of the printed pdf ([#22](https://github.com/TIGNUM/pdf-generation-actions-web-component/issues/22)) ([234c577](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/234c57735adc8218b14b3255faca4c14079a30ee))
+
 # [1.19.0](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.18.0...v1.19.0) (2021-09-02)
 
 
