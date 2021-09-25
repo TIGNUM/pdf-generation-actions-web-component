@@ -50,22 +50,37 @@ class PrintToPdf extends LitElement {
 
   __downloadPdf(event) {
     const elementToPrint = this.shadowRoot.querySelector('#element-to-print');
+
+    // Safari doesn't support huge canvas sizes, we lower the resolution for
+    // Appled devices to make sure the PDF fits on the canvas.
+    const isApple = () => navigator.vendor.match(/apple/i);
+
     if (!elementToPrint) {
       console.warn('The web component has not rendered yet, retrying in 100ms');
       setTimeout( () => this.__downloadPdf(event), 100);
       return
     }
     try {
-      html2pdf().set({
-        html2canvas: {
-          scrollX: 0,
-          scrollY:0,
-          scale: 2
-        }
-      }).from(elementToPrint).save(event.detail?.fileName || 'file.pdf').then(() => {
-        const downloadedEvent = new Event('downloaded');
-        this.dispatchEvent(downloadedEvent);
-      });
+      const options = {
+        image: {
+            type: 'jpeg',
+            quality: 0.90
+          },
+          html2canvas: {
+            scrollX: 0,
+            scrollY: 0,
+            scale: isApple() ? 1:1.75 // Do not abuse, higher values are glitchy and images may dissapear
+          }
+      }
+      html2pdf()
+        .set(options)
+        .from(elementToPrint)
+        .toPdf()
+        .save(event.detail?.fileName || 'file.pdf')
+        .then(() => {
+          const downloadedEvent = new Event('downloaded');
+          this.dispatchEvent(downloadedEvent);
+        });
     }
     catch(error) {
       throw new Error(error);
