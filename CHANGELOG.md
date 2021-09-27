@@ -1,3 +1,10 @@
+## [1.19.2](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.19.1...v1.19.2) (2021-09-27)
+
+
+### Bug Fixes
+
+* reduce scale, and set scale:1 for apple devices ([#23](https://github.com/TIGNUM/pdf-generation-actions-web-component/issues/23)) ([8531b2c](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/8531b2c1ff462d9778ad0d6d609ff0c70b66c50f))
+
 ## [1.19.1](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.19.0...v1.19.1) (2021-09-22)
 
 
