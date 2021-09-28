@@ -69,7 +69,7 @@ class PrintToPdf extends LitElement {
           html2canvas: {
             scrollX: 0,
             scrollY: 0,
-            scale: isApple() ? 1:1.75 // Do not abuse, higher values are glitchy and images may dissapear
+            scale: isApple() ? 1:4 // Do not abuse, higher values are glitchy and images may disappear
           }
       }
       html2pdf()
