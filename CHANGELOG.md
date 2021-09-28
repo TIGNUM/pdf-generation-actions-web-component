@@ -1,3 +1,10 @@
+## [1.19.3](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.19.2...v1.19.3) (2021-09-28)
+
+
+### Bug Fixes
+
+* fix print resolution increasing scale to 4 ([7c15b13](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/7c15b13bc1b97b3909c06a005866e3191bfaf774))
+
 ## [1.19.2](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.19.1...v1.19.2) (2021-09-27)
 
 
