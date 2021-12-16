@@ -7,8 +7,6 @@ module.exports = {
   },
   plugins: ["sonarjs"],
   extends: [
-    'plugin:sonarjs/recommended',
-    "plugin:lit/recommended",
-    "plugin:lit/recommended"
+    'plugin:sonarjs/recommended'
   ],
 }
