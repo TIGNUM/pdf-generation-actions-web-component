@@ -60,6 +60,7 @@
     "@babel/plugin-proposal-decorators": "^7.14.2",
     "@babel/plugin-proposal-private-methods": "^7.13.0",
     "@babel/preset-env": "^7.14.4",
+    "@open-wc/testing": "3.0.3",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/commit-analyzer": "^8.0.1",
     "@semantic-release/git": "^9.0.0",
@@ -74,6 +75,7 @@
     "babel-eslint": "10.1.0",
     "babel-loader": "^8.2.2",
     "babel-preset-env": "^1.7.0",
+    "dompurify": "2.3.4",
     "eslint": "7.27.0",
     "eslint-plugin-sonarjs": "0.7.0",
     "html2pdf.js": "0.9.3",
@@ -83,8 +85,5 @@
     "webpack": "5.38.1",
     "webpack-cli": "4.7.0"
   },
-  "dependencies": {
-    "@open-wc/testing": "3.0.3",
-    "dompurify": "2.3.4"
-  }
+  "dependencies": {}
 }
