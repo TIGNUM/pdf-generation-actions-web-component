@@ -1,3 +1,10 @@
+# [1.20.0](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.19.3...v1.20.0) (2021-12-16)
+
+
+### Features
+
+* **webcomponent:** remove lit, export as plain web component ([50b698f](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/50b698fa0bc4837d6f8149ed49957ebdcb5f24b8))
+
 ## [1.19.3](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.19.2...v1.19.3) (2021-09-28)
 
 
