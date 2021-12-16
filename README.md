@@ -16,10 +16,9 @@ Print or generate a pdf from the html passed as string to the Web Component
 
     import 'pdf-creation-actions-web-component';
 
-
 ## How to load the component
 
-    <print-to-pdf html="<p>Test</p>"></print-to-pdf>
+    <print-to-pdf html="<p>content to preview and print</p>" style="{root style as  string}"></print-to-pdf>
 
 ## Web Component listens for event "download-pdf"
 
