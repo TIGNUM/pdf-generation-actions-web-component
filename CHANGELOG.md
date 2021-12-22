@@ -1,3 +1,10 @@
+## [1.20.1](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.20.0...v1.20.1) (2021-12-22)
+
+
+### Bug Fixes
+
+* fix doble render first time colled ([#28](https://github.com/TIGNUM/pdf-generation-actions-web-component/issues/28)) ([0df665b](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/0df665b9a0a8ef6e2a781d3d59a7e1a8ff00a5eb))
+
 # [1.20.0](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.19.3...v1.20.0) (2021-12-16)
 
 

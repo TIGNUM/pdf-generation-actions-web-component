@@ -1,6 +1,6 @@
 {
   "name": "pdf-creation-actions-web-component",
-  "version": "1.20.0",
+  "version": "1.20.1",
   "description": "component to preview content and print to a pdf",
   "main": "dist/index.js",
   "scripts": {
