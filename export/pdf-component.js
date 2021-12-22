@@ -7,12 +7,17 @@ class PrintToPdf extends HTMLElement {
     // Create this.shadowRoot
     this.attachShadow({mode: 'open'});
 
+    this.isRendered = false;
+
     this._downloadPdf = this._downloadPdf.bind(this);
     this._scrollTop = this._scrollTop.bind(this);
     this._render = this._render.bind(this);
   }
 
   connectedCallback() {
+    if(this.isRendered) return;
+
+    this.isRendered = true;
     this.shadowRoot.addEventListener('download-pdf', this._downloadPdf);
 
     this.shadowRoot.addEventListener('scrollTop', this._scrollTop);
@@ -24,7 +29,7 @@ class PrintToPdf extends HTMLElement {
       color: var(--content-text-color, black);
       background: var(--content-background-color, white);
     }
-`;
+    `;
     this._render();
   }
 
@@ -112,8 +117,8 @@ class PrintToPdf extends HTMLElement {
     const shadowStyleElement = document.createElement('style');
     shadowStyleElement.textContent = this.shadowRootStyle;
 
-    this.shadowRoot.appendChild(shadowStyleElement)
-    this.shadowRoot.appendChild(wrapperElement)
+    this.shadowRoot.appendChild(shadowStyleElement);
+    this.shadowRoot.appendChild(wrapperElement);
   }
 
 }
