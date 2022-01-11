@@ -15,10 +15,11 @@ class PrintToPdf extends HTMLElement {
   }
 
   connectedCallback() {
+    this.shadowRoot.addEventListener('download-pdf', this._downloadPdf);
+
     if(this.isRendered) return;
 
     this.isRendered = true;
-    this.shadowRoot.addEventListener('download-pdf', this._downloadPdf);
 
     this.shadowRoot.addEventListener('scrollTop', this._scrollTop);
 
