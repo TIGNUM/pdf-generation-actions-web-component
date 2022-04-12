@@ -17,13 +17,13 @@ class PrintToPdf extends HTMLElement {
   connectedCallback() {
     this.shadowRoot.addEventListener('download-pdf', this._downloadPdf);
 
-    if(this.isRendered) return;
+    if (this.isRendered) { return; }
 
     this.isRendered = true;
 
     this.shadowRoot.addEventListener('scrollTop', this._scrollTop);
 
-    this.html = this.getAttribute('html') || "<p>No content passed</p>";
+    this.html = this.getAttribute('html') || '<p>No content passed</p>';
 
     this.shadowRootStyle = this.getAttribute('style') || `
     :host {
@@ -47,16 +47,16 @@ class PrintToPdf extends HTMLElement {
       composed: true
     });
     this.shadowRoot.dispatchEvent(event);
-  };
+  }
 
   _printPdf() {
     window.print();
-  };
+  }
 
   _scrollTop() {
     const element = this.shadowRoot.querySelector('#element-to-print');
     element.scrollTop = 0;
-  };
+  }
 
   _downloadPdf(event) {
     const elementToPrint = this.shadowRoot.querySelector('#element-to-print');
@@ -66,7 +66,7 @@ class PrintToPdf extends HTMLElement {
     const isApple = navigator.vendor.match(/apple/i);
 
     // Firefox does not support a canvas size as big as chrome
-    const isFirefox = navigator.userAgent.match(/firefox/i)
+    const isFirefox = navigator.userAgent.match(/firefox/i);
 
     // Do not abuse, higher values are glitchy and images may disappear or the
     // file may fail to render altogether
@@ -80,21 +80,21 @@ class PrintToPdf extends HTMLElement {
 
     if (!elementToPrint) {
       console.warn('The web component has not rendered yet, retrying in 100ms');
-      setTimeout( () => this._downloadPdf(event), 100);
-      return
+      setTimeout(() => this._downloadPdf(event), 100);
+      return;
     }
     try {
       const options = {
         image: {
-            type: 'jpeg',
-            quality: 0.75
-          },
-          html2canvas: {
-            scrollX: 0,
-            scrollY: 0,
-            scale: scale
-          }
-      }
+          type: 'jpeg',
+          quality: 0.75
+        },
+        html2canvas: {
+          scrollX: 0,
+          scrollY: 0,
+          scale
+        }
+      };
       html2pdf()
         .set(options)
         .from(elementToPrint)
@@ -105,10 +105,10 @@ class PrintToPdf extends HTMLElement {
           this.dispatchEvent(downloadedEvent);
         });
     }
-    catch(error) {
+    catch (error) {
       throw new Error(error);
     }
-  };
+  }
 
   _render() {
     const wrapperElement = document.createElement('div');
