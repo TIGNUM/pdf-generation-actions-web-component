@@ -6,7 +6,7 @@
   </head>
   <body>
     <script>
-      function downloadPdf(filename = 'no-file-name-provided') {
+      function downloadPdf(filename = 'no-file-name-provided.pdf') {
         const event = new CustomEvent("download-pdf", {
           composed: true,
           bubbles: true,
@@ -17,8 +17,8 @@
         document.getElementById('pdfComponent').shadowRoot.dispatchEvent(event);
       }
     </script>
-    <button id="print-pdf" onclick="downloadPdf('filename-requested')">Download Pdf</button>
-    <print-to-pdf id="pdfComponent" html="<div style='width: 210mm; margin: 10px auto; height: 60mm; box-shadow: 2px 1px 5px 2px #00000040; padding-top: 5px; text-align: center; color: blue'><p>Demo content for the Pdf generation actions Web Component</p><img style='width: 60%' src='screenshot-component.png'></div>"></print-to-pdf>
+    <button onclick="downloadPdf('filename-requested.pdf')">Download Pdf</button>
+    <print-to-pdf id="pdfComponent" html="<div><div style='width: 210mm; margin: 10px auto; height: 60mm; box-shadow: 2px 1px 5px 2px #00000040; padding-top: 5px; text-align: center; color: blue'><p>Demo content for the Pdf generation actions Web Component</p><img style='width: 60%' src='screenshot-component.png'></div></div>"></print-to-pdf>
   </body>
 </html>
 

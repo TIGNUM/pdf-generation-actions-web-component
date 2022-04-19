@@ -18,7 +18,7 @@ Print or generate a pdf from the html passed as string to the Web Component
 
 ## How to load the component
 
-    <print-to-pdf html="<p>content to preview and print</p>" style="{root style as  string}"></print-to-pdf>
+    <print-to-pdf html="<div class="pages-wrapper"><div class="page-1"><style>p {color: red}</style}<p>first page to preview and print</p></div></div>" style="{root style as  string}"></print-to-pdf>
 
 ## Web Component listens for event "download-pdf"
 
