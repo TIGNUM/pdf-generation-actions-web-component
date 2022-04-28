@@ -1,3 +1,10 @@
+## [1.20.3](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.20.2...v1.20.3) (2022-04-28)
+
+
+### Bug Fixes
+
+* fix lint ([#38](https://github.com/TIGNUM/pdf-generation-actions-web-component/issues/38)) ([bedca2a](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/bedca2ac9c4ec7e7a5587233a62e26db7fcc8f35))
+
 ## [1.20.2](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.20.1...v1.20.2) (2022-01-11)
 
 
