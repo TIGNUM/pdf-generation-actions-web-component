@@ -1,10 +1,10 @@
-# Pdf generation actions Web Component
+# PDF creation actions Web Component
 
 [![https://www.npmjs.com published Package](https://github.com/TIGNUM/pdf-generation-actions-web-component/actions/workflows/release-package.yml/badge.svg)](https://github.com/TIGNUM/pdf-generation-actions-web-component/actions/workflows/release-package.yml) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 Packages are released [on the public npm registry](https://www.npmjs.com/package/pdf-creation-actions-web-component).
 
-Print or generate a pdf from the html passed as string to the Web Component.
+Generate and download multi-page PDF from HTML passed as string to the Web Component.
 
 ![Image of the Web Component](./demo/screenshot-component.png)
 
