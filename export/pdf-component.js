@@ -98,7 +98,7 @@ class PrintToPdf extends HTMLElement {
 
     if (!elementToPrint.children[0]?.children?.length) {
       console.warn('The web component has not rendered yet, retrying in 100ms');
-      this.retries++
+      this.retries++;
       if (this.retries===31) {
         console.warn('Too many retries! quietly abandon pdf generation after 3s');
         const downloadedEvent = new Event('downloaded');
@@ -127,7 +127,7 @@ class PrintToPdf extends HTMLElement {
       const pagesPdf = [];
 
       // Sync loop to prevent locking the main UI thread
-      for (var i=0; i < pages.length; i++) {
+      for (let i=0; i < pages.length; i++) {
         const page = pages[i];
         this._dispatchProgress(`Processing page ${i+1} / ${pages.length}`);
         const pdf = await html2pdf().set(options).from(page).toPdf().get('pdf');
