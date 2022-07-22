@@ -68,6 +68,24 @@ window.addEventListener('progress', function(event) {
 }
 ```
 
+#### 'How to use it:'
+
+1- Add to the tag the event 'progress':
+
+```
+<print-to-pdf ... @progress="onProgress" />
+```
+
+2- In the function that you declare "onProgress" capture the event message and then use it as you need it:
+
+```
+function onProgress(event) {
+  const { detail: { message } } = event;
+  console.log(message);
+}
+
+```
+
 ## Apply styles to the Web Component
 
 This component has some styles that can be editable, and are defined in index.js in [static styles](https://github.com/TIGNUM/pdf-generation-actions-web-component/blob/main/index.js).
@@ -115,7 +133,7 @@ It is also possible to add css classes:
 ## Run Tests
 
 ```
->    npm run test  
+>    npm run test
 ```
 
 ## Demo on browser
@@ -127,4 +145,3 @@ It is also possible to add css classes:
 and open:
 
     [http://127.0.0.1:8082/index.html](http://127.0.0.1:8082/index.html)
-
