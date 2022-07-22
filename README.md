@@ -49,7 +49,10 @@ function downloadPdf(filename = 'no-file-name-provided') {
     bubbles: true,
     detail: {
       fileName: filename,
-      quality: 2
+      quality: 2, // to define scale, by default is 4
+      orientation: 'landscape', //by default is 'portrait'
+      unit: 'cm', // by default is 'in'
+      format: 'A4', // by default is 'letter'
     },
   });
   document.getElementById('pdfComponent').shadowRoot.dispatchEvent(event);
