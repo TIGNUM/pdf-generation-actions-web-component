@@ -119,6 +119,11 @@ class PrintToPdf extends HTMLElement {
           scrollX: 0,
           scrollY: 0,
           scale: event.detail?.quality || 4
+        },
+        jsPDF: {
+          orientation: event.detail?.orientation || 'portrait',
+          unit: event.detail?.unit || 'in',
+          format: event.detail?.format || 'letter'
         }
       };
 
@@ -144,7 +149,7 @@ class PrintToPdf extends HTMLElement {
 
       const anchor = document.createElement('a');
       anchor.href = finalPdf;
-      anchor.download = event.detail?.fileName || 'file.pdf';
+      anchor.download = `${event.detail?.fileName}.pdf` || 'file.pdf';
       anchor.click();
       const downloadedEvent = new Event('downloaded');
       this.dispatchEvent(downloadedEvent);
