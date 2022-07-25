@@ -49,7 +49,10 @@ function downloadPdf(filename = 'no-file-name-provided') {
     bubbles: true,
     detail: {
       fileName: filename,
-      quality: 2
+      quality: 2, // to define scale, by default is 4
+      orientation: 'landscape', //by default is 'portrait'
+      unit: 'cm', // by default is 'in'
+      format: 'A4', // by default is 'letter'
     },
   });
   document.getElementById('pdfComponent').shadowRoot.dispatchEvent(event);
@@ -66,6 +69,24 @@ window.addEventListener('progress', function(event) {
     console.log(event.detail.message);
   })
 }
+```
+
+#### 'How to use it:'
+
+1- Add to the tag the event 'progress':
+
+```
+<print-to-pdf ... @progress="onProgress" />
+```
+
+2- In the function that you declare "onProgress" capture the event message and then use it as you need it:
+
+```
+function onProgress(event) {
+  const { detail: { message } } = event;
+  console.log(message);
+}
+
 ```
 
 ## Apply styles to the Web Component
@@ -115,7 +136,7 @@ It is also possible to add css classes:
 ## Run Tests
 
 ```
->    npm run test  
+>    npm run test
 ```
 
 ## Demo on browser
@@ -127,4 +148,3 @@ It is also possible to add css classes:
 and open:
 
     [http://127.0.0.1:8082/index.html](http://127.0.0.1:8082/index.html)
-
