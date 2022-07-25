@@ -84,7 +84,7 @@
     "http-server": "^0.12.3",
     "pdf-lib": "1.17.1",
     "puppeteer": "^10.0.0",
-    "semantic-release": "^17.4.3",
+    "semantic-release": "^19.0.3",
     "webpack": "5.38.1",
     "webpack-cli": "4.7.0"
   }
