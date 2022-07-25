@@ -1,3 +1,10 @@
+## [1.20.4](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.20.3...v1.20.4) (2022-07-25)
+
+
+### Bug Fixes
+
+* add more options to print pdf and fix name of the file ([53e1f86](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/53e1f8653432eb8beab15b1f77dd8b0ade5c4e24))
+
 ## [1.20.3](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.20.2...v1.20.3) (2022-04-28)
 
 
