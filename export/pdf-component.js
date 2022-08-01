@@ -123,7 +123,7 @@ class PrintToPdf extends HTMLElement {
         jsPDF: {
           orientation: event.detail?.orientation || 'portrait',
           unit: event.detail?.unit || 'in',
-          format: event.detail?.format || 'A4'
+          format: event.detail?.format || 'letter'
         }
       };
 
