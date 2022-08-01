@@ -1,3 +1,10 @@
+## [1.20.5](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.20.4...v1.20.5) (2022-08-01)
+
+
+### Bug Fixes
+
+* try direct A4 format ([9c83afd](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/9c83afd0c07a19e16b644192402d37505d778190))
+
 ## [1.20.4](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.20.3...v1.20.4) (2022-07-25)
 
 
