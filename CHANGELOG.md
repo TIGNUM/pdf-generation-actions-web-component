@@ -1,3 +1,10 @@
+## [1.20.7](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.20.6...v1.20.7) (2022-08-01)
+
+
+### Bug Fixes
+
+* restore previous values ([0931c09](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/0931c0944f4dd79071f743cb38ab126b3073f021))
+
 ## [1.20.6](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.20.5...v1.20.6) (2022-08-01)
 
 
