@@ -1,3 +1,12 @@
+## [1.20.6](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.20.5...v1.20.6) (2022-08-01)
+
+
+### Bug Fixes
+
+* restore default letter and pass format from function ([f1d72c6](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/f1d72c69ead4cd20f67e3adf21a6a94408963b67))
+* try direct A4 format ([d914a32](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/d914a327d130b52bc1fc6c33c353063356cd409f))
+* update library ([0609d12](https://github.com/TIGNUM/pdf-generation-actions-web-component/commit/0609d12a5774030216ae96690c00aeea9e44ae36))
+
 ## [1.20.5](https://github.com/TIGNUM/pdf-generation-actions-web-component/compare/v1.20.4...v1.20.5) (2022-08-01)
 
 
